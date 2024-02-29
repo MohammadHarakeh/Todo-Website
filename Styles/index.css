@@ -15,8 +15,8 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  width: 30%;
-  height: 40vh;
+  width: 25%;
+  height: 30vh;
   margin-top: 15%;
   gap: 20px;
   background-color: #fff7f7;
@@ -28,17 +28,49 @@ body {
 
 .user-login {
   display: flex;
-  width: 52%;
-  justify-content: space-around;
+  width: 44%;
+  justify-content: space-evenly;
+}
+
+.user-login i {
+  margin-top: 4%;
 }
 
 .user-login input {
-  font-size: 100%;
+  width: 75%;
+  height: 140%;
+  font-size: 95%;
   border-radius: 5px;
   border: 1px solid #ccc;
+  padding-left: 5px;
 }
 
 input:focus {
   border-color: #00abe4;
   box-shadow: 0 0 8px #00abe4;
+}
+
+.buttons-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 20px;
+}
+
+.button a {
+  display: flex;
+  width: 110px;
+  height: 35px;
+  font-size: 14px;
+  margin-top: 20%;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background-color: #00abe4;
+  color: #fff7f7;
+}
+
+.button:hover a {
+  background-color: #007197;
 }
