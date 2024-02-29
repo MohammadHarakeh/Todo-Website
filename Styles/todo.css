@@ -1,1 +1,8 @@
-
+.title {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 5px;
+}
