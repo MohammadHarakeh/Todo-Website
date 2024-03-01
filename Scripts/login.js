@@ -23,14 +23,18 @@ function addToDo() {
     return;
   }
 
+  if (userInput.length == 0) {
+    alert("Please enter a task");
+    return;
+  }
+
   const addedDiv = document.getElementById("todoList");
   const outerWrapper = document.createElement("div");
   outerWrapper.id = addedDiv.children.length;
 
   const content = document.createElement("p");
-  const trashIcon = document.createElement("i");
-
   content.innerText = userInput;
+  const trashIcon = document.createElement("i");
 
   trashIcon.className = "fa-solid fa-trash";
   trashIcon.addEventListener("click", function () {
@@ -41,12 +45,16 @@ function addToDo() {
   outerWrapper.appendChild(trashIcon);
   addedDiv.appendChild(outerWrapper);
 
+  content.style.backgroundColor = "#00abe4";
+  content.style.width = "100%";
+  content.style.height = "80%";
+
   outerWrapper.style.display = "flex";
   outerWrapper.style.maxWidth = "100%";
+  outerWrapper.style.height = "4vh";
 
-  content.style.flex = "1";
-  content.style.float = "right";
-
+  trashIcon.style.position = "absolute";
+  trashIcon.style.right = "12%";
   trashIcon.style.fontSize = "20px";
   trashIcon.style.cursor = "pointer";
 

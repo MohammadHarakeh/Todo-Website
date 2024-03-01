@@ -8,15 +8,22 @@ body {
   display: flex;
   justify-content: center;
   background-color: #00abe4;
+  background-image: url("/Assets/Background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 .wrapper {
+  position: relative;
+  z-index: 1;
   width: 25%;
   height: 50vh;
   margin-top: 10%;
   gap: 30px;
   background-color: #fff7f7;
-  border: 1px solid #000000;
+
   border-radius: 14px;
+  background: transparent;
 }
 
 .centered {
