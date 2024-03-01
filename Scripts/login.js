@@ -15,6 +15,7 @@ function login() {
   }
 }
 
+const addedDiv = document.getElementById("todoList");
 function addToDo() {
   const userInput = document.getElementById("todoInput").value;
 
@@ -23,7 +24,6 @@ function addToDo() {
     return;
   }
 
-  const addedDiv = document.getElementById("todoList");
   const outerWrapper = document.createElement("div");
   outerWrapper.id = addedDiv.children.length;
 
@@ -31,6 +31,7 @@ function addToDo() {
   content.innerText = userInput;
   content.addEventListener("click", function () {
     doneItem(outerWrapper.id);
+    saveLocal();
   });
   const trashIcon = document.createElement("i");
 
@@ -66,6 +67,7 @@ function deleteItem(id) {
   const toDelete = document.getElementById(id);
   if (toDelete) {
     toDelete.remove();
+    saveLocal();
   }
 }
 
@@ -80,5 +82,35 @@ function doneItem(id) {
     }
 
     toDone.style.cursor = "pointer";
+    saveLocal();
   }
 }
+
+function saveLocal() {
+  localStorage.setItem("data", addedDiv.innerHTML);
+}
+
+function getLocal() {
+  addedDiv.innerHTML = localStorage.getItem("data");
+}
+
+function getLocal() {
+  addedDiv.innerHTML = localStorage.getItem("data");
+
+  const allItems = addedDiv.querySelectorAll("div");
+  allItems.forEach((item) => {
+    const content = item.querySelector("p");
+    const trashIcon = item.querySelector("i");
+
+    content.addEventListener("click", function () {
+      doneItem(item.id);
+      saveLocal();
+    });
+
+    trashIcon.addEventListener("click", function () {
+      deleteItem(item.id);
+    });
+  });
+}
+
+getLocal();
