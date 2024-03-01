@@ -1,3 +1,14 @@
+* {
+  background-image: url("/Assets/Background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.wrapper-title {
+  padding-bottom: 10%;
+}
+
 .user-login {
   display: flex;
   width: 60%;
